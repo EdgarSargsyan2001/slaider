@@ -147,17 +147,9 @@ useEffect(()=>{
 
       </div>
 
-      <select className='select' onChange={(e)=>{
-          if(e.target.value === "on"){
-            setAutoRep(true)
-          }else if(e.target.value === "off"){
-            setAutoRep(false)
-          }
-
-        }}>
-            <option value="on">autoRep:ON</option>
-            <option value="off">autoRep:OFF</option>
-        </select>
+      <button className='ButtonONOFF' onClick={ () => setAutoRep(!autoRep) }>{autoRep?"ON":"OFF"}</button>
+           
+        
     </div>
   );
 }

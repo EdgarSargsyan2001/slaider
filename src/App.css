@@ -1,6 +1,6 @@
 .App {
   height: 100vh;
-  background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
+  background: url("https://freerangestock.com/sample/140290/romantic-couple-watching-the-stars--love-on-the-milky-way.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   perspective: 1800px;
@@ -9,10 +9,11 @@
   justify-content: center;
   align-items: center;
 }
-.select{
+.ButtonONOFF{
     margin-top: 15px;
     background: transparent;
     border-style: none;
+    color: white !important;
     cursor: pointer;
     font-size: 20px;
 }
@@ -21,7 +22,7 @@
     height: 500px;
     padding: 25px 28px;
     transition: 0.8s;
-    background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
+    background: url("https://data.whicdn.com/images/265060879/original.gif");
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -33,6 +34,7 @@
 .ul{
     position: absolute;
     margin: 0;
+    margin-top: -12px;
     padding: 0;
     transition:all 800ms linear;
     display: flex;
@@ -52,7 +54,7 @@
     transform: rotate3d(60, 4, 1, -34deg);
     width: inherit;
     height: inherit;
-    box-shadow:0px -26px 19px -7px rgb(0 0 0 / 19%);
+    box-shadow:0 -29px 45px 5px rgba(255, 255, 255,0.43);
 }
 .next,.prev{
     width: 40px;
@@ -76,7 +78,10 @@
 
 
 @media screen and (max-width:500px) {
-
+    .App{
+        /* background-size: contain; */
+        background-position-x:center;
+    }
     .screen{
         width:272px;
         height: 50vh;
