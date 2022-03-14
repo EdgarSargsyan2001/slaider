@@ -8,7 +8,7 @@ function App() {
   const [showButtonPrev,setShowButtonPrev] = useState(false)
   const [flagInt,setFlagInt] = useState(true)
   const [autoRep,setAutoRep] = useState(true)
-  const [size,setZise] = useState(0)
+  const [size,setZise] = useState(-0.4)
   
   const translateLength = activeItemPosition * ( (window.screen.width > 500)?1023:295 )
   
@@ -23,10 +23,19 @@ function App() {
   
   ]
   
+  // useEffect(()=>{
+  //   fetch('https://www.pexels.com/assets/packs/js/application-1bc31b573f096778eeb2').then(val =>{
+  //     console.log(val)
+  //     return val.json()
+  //   }).then(response => console.log(response) )   
+
+  // })
+
   function nextClick(){
     if(activeItemPosition < items.length - 1 ){
       setActiveItemPosition((prev)=>prev + 1)
       setShowButtonPrev(true)
+      setZise(-0.4)
       
   }
   if(activeItemPosition === items.length-2){
@@ -39,6 +48,7 @@ function prevClick(){
   if(activeItemPosition > 0 ){
     setActiveItemPosition((prev)=>prev - 1)
     setShowButtonNext(true)
+    setZise(0.4)
   }
   if(activeItemPosition < 2){
     setShowButtonPrev(!showButtonPrev)
@@ -56,7 +66,7 @@ function autoReplace(){
       setShowButtonPrev(true)
       setZise(-0.4)
       if(activeItemPosition === items.length - 2 ) setShowButtonNext(false)
-    },5000)
+    },3500)
 
   }else{
 
@@ -64,7 +74,7 @@ function autoReplace(){
       setActiveItemPosition((prev)=>prev - 1)
       setShowButtonNext(true)
       setZise(0.4)
-    },5000)
+    },3500)
 
     setFlagInt(false)
   }
