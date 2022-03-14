@@ -1,7 +1,9 @@
 .App {
   height: 100vh;
   background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
-
+  background-size: cover;
+  background-repeat: no-repeat;
+  perspective: 1800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,29 +25,32 @@
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    /* transform: matrix3d(1, 0, -0.5, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
     
 }
 .ul{
-    perspective: 3000px;
     position: absolute;
     margin: 0;
     padding: 0;
-    transition:all 280ms linear;
+    transition:all 800ms linear;
     display: flex;
     list-style: none;
 }
 .list{
+    perspective: 3000px;
     width: 944px;
     height: 450px;
-    margin: 25px 28px;
+    margin: 25px 45px;
+    margin-left: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 79px 67px 30px -42px rgb(0 0 0 / 30%), 49px 61px 39px -42px rgb(0 0 0 / 34%);
 }
 .imges{
+    transform: rotate3d(60, 4, 1, -34deg);
     width: inherit;
     height: inherit;
+    box-shadow:0px -62px 15px -3px rgb(0 0 0 / 19%);
 }
 .next,.prev{
     width: 40px;
@@ -80,6 +85,7 @@
 
     }
     .list{
+        perspective: 1500px;
         width: 216px;
         height: 43vh;
     }   

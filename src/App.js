@@ -8,8 +8,9 @@ function App() {
   const [showButtonPrev,setShowButtonPrev] = useState(false)
   const [flagInt,setFlagInt] = useState(true)
   const [autoRep,setAutoRep] = useState(true)
+  const [size,setZise] = useState(0)
   
-  const translateLength = activeItemPosition * ( (window.screen.width > 500)?998:270 )
+  const translateLength = activeItemPosition * ( (window.screen.width > 500)?1023:295 )
   
   const items = [
     "https://artworld.ru/images/cms/content/catalog2/rodriguez_kartina_maslom_citrusovyj_fresh_apelsiny_jr190515.jpg",
@@ -53,6 +54,7 @@ function autoReplace(){
     clearInt = setTimeout(()=>{
       setActiveItemPosition((prev)=>prev + 1)
       setShowButtonPrev(true)
+      setZise(-0.4)
       if(activeItemPosition === items.length - 2 ) setShowButtonNext(false)
     },5000)
 
@@ -61,6 +63,7 @@ function autoReplace(){
     clearInt = setTimeout(()=>{
       setActiveItemPosition((prev)=>prev - 1)
       setShowButtonNext(true)
+      setZise(0.4)
     },5000)
 
     setFlagInt(false)
@@ -89,7 +92,16 @@ useEffect(()=>{
   return (
     <div className="App">
         
-      <div className='screen'>
+      <div className='screen'
+      
+        style={
+               
+                {transform:` matrix3d(1, 0, ${size}, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)` }
+                   
+                 
+            
+              }
+      >
         
         <ul className='ul'
             style={{
@@ -101,13 +113,14 @@ useEffect(()=>{
               <li 
                 key={Math.random()}
                 className='list'
-                style={
-                  (activeItemPosition !== parseInt(items.length/2)) ? 
-                  {transform:` rotateY(${ (activeItemPosition > parseInt(items.length/2)? 150-(activeItemPosition*12) : 100-(activeItemPosition*15))}deg)` }
-                   : 
-                  {transform:` rotateY(0deg)`,boxShadow:'rgb(0 0 0 / 45%) 0px 19px 15px -2px' }
+              //   style={
+              //     (activeItemPosition !== parseInt(items.length/2)) ? 
+              //     {transform:` rotateY(${ (activeItemPosition > parseInt(items.length/2)? 150-(activeItemPosition*12) : 100-(activeItemPosition*15))}deg)` }
+              //      : 
+              //     {transform:` rotateY(0deg)`,boxShadow:'rgb(0 0 0 / 45%) 0px 19px 15px -2px' }
             
-              }
+              // }
+        
               ><img className='imges' alt={item} src={item}/></li>
             
             )
