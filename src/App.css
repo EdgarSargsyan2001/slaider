@@ -3,10 +3,17 @@
   background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.select{
+    margin-top: 15px;
+    background: transparent;
+    border-style: none;
+    cursor: pointer;
+    font-size: 20px;
+}
 .screen{
     width: 1000px;
     height: 500px;

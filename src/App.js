@@ -7,6 +7,7 @@ function App() {
   const [showButtonNext,setShowButtonNext] = useState(true)
   const [showButtonPrev,setShowButtonPrev] = useState(false)
   const [flagInt,setFlagInt] = useState(true)
+  const [autoRep,setAutoRep] = useState(true)
   
   const translateLength = activeItemPosition * ( (window.screen.width > 500)?998:270 )
   
@@ -44,6 +45,7 @@ function prevClick(){
 
 }
 function autoReplace(){
+  if(autoRep){
   let clearInt
 
   if(activeItemPosition < items.length - 1 && flagInt){
@@ -52,14 +54,14 @@ function autoReplace(){
       setActiveItemPosition((prev)=>prev + 1)
       setShowButtonPrev(true)
       if(activeItemPosition === items.length - 2 ) setShowButtonNext(false)
-    },1000)
+    },5000)
 
   }else{
 
     clearInt = setTimeout(()=>{
       setActiveItemPosition((prev)=>prev - 1)
       setShowButtonNext(true)
-    },1000)
+    },5000)
 
     setFlagInt(false)
   }
@@ -69,12 +71,13 @@ function autoReplace(){
   }
   return clearInt
 }
+}
 
 useEffect(()=>{
-   let clearInt = autoReplace()
- 
+  
+  let clearInt = autoReplace()
   return () => clearTimeout(clearInt)
-    
+
 })
 
 
@@ -85,7 +88,7 @@ useEffect(()=>{
 
   return (
     <div className="App">
-
+        
       <div className='screen'>
         
         <ul className='ul'
@@ -121,6 +124,17 @@ useEffect(()=>{
 
       </div>
 
+      <select className='select' onChange={(e)=>{
+          if(e.target.value === "on"){
+            setAutoRep(true)
+          }else if(e.target.value === "off"){
+            setAutoRep(false)
+          }
+
+        }}>
+            <option value="on">autoRep:ON</option>
+            <option value="off">autoRep:OFF</option>
+        </select>
     </div>
   );
 }
