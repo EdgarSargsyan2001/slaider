@@ -1,38 +1,82 @@
 .App {
-  text-align: center;
-}
+  height: 100vh;
+  background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.screen{
+    width: 1000px;
+    height: 500px;
+    padding: 25px 28px;
+    background: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg&ga=GA1.2.1014303459.1641081600");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    
+}
+.ul{
+    perspective: 3000px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transition:all 280ms linear;
+    display: flex;
+    list-style: none;
+}
+.list{
+    width: 944px;
+    height: 450px;
+    margin: 25px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 79px 67px 30px -42px rgb(0 0 0 / 30%), 49px 61px 39px -42px rgb(0 0 0 / 34%);
+}
+.imges{
+    width: inherit;
+    height: inherit;
+}
+.next,.prev{
+    width: 40px;
+    height: 550px;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 24px;
+}
+.prev{
+    left: 0;
+}
+.next:hover,.prev:hover{
+    background: rgba(87, 107, 80, 0.308);
+    cursor: pointer;
+    color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+@media screen and (max-width:500px) {
+
+    .screen{
+        width:272px;
+        height: 50vh;
+        /* height: 200px; */
+    }
+    .ul{
+        perspective: 775px;
+
+    }
+    .list{
+        width: 216px;
+        height: 43vh;
+    }   
+    .next,.prev{
+        height: 60vh;
+    }
 }
