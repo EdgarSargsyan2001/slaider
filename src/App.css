@@ -44,14 +44,14 @@
     perspective: 3000px;
     width: 944px;
     height: 450px;
-    margin: 25px 45px;
+    margin: 20px 45px;
     margin-left: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .imges{
-    transform: rotate3d(60, 4, 1, -34deg);
+    transform:rotate3d(11, 0, 0, -32deg);
     width: inherit;
     height: inherit;
     box-shadow:0px -17px 33px -5px rgb(255 255 255 / 30%);
@@ -84,7 +84,7 @@
     }
     .screen{
         width:272px;
-        height: 50vh;
+        height: 400px;
         /* height: 200px; */
     }
     .ul{
@@ -94,7 +94,7 @@
     .list{
         perspective: 1500px;
         width: 216px;
-        height: 43vh;
+        height: 322px;
     }   
     .next,.prev{
         width: 30px;
