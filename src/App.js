@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 import './App.css';
 
 function App() {
@@ -9,9 +10,15 @@ function App() {
   const [flagInt,setFlagInt] = useState(true)
   const [autoRep,setAutoRep] = useState(true)
   const [size,setZise] = useState(-0.4)
+  const audioRef = useRef()
+
   
   const translateLength = activeItemPosition * ( (window.screen.width > 500)?1023:295 )
-  
+
+
+
+
+
   const items = [
     "https://artworld.ru/images/cms/content/catalog2/rodriguez_kartina_maslom_citrusovyj_fresh_apelsiny_jr190515.jpg",
     "https://zvetnoe.ru/upload/images/blog/kartini/001.jpg",
@@ -23,15 +30,10 @@ function App() {
   
   ]
   
-  // useEffect(()=>{
-  //   fetch('https://www.pexels.com/assets/packs/js/application-1bc31b573f096778eeb2').then(val =>{
-  //     console.log(val)
-  //     return val.json()
-  //   }).then(response => console.log(response) )   
-
-  // })
 
   function nextClick(){
+    // console.log(audioRef.current.audioEl.current.style.display="none")
+    
     if(activeItemPosition < items.length - 1 ){
       setActiveItemPosition((prev)=>prev + 1)
       setShowButtonPrev(true)
@@ -44,7 +46,7 @@ function App() {
 }
 
 function prevClick(){
-  
+
   if(activeItemPosition > 0 ){
     setActiveItemPosition((prev)=>prev - 1)
     setShowButtonNext(true)
@@ -92,10 +94,6 @@ useEffect(()=>{
   return () => clearTimeout(clearInt)
 
 })
-
-
-
-
 
 
 
@@ -148,8 +146,16 @@ useEffect(()=>{
       </div>
 
       <button className='ButtonONOFF' onClick={ () => setAutoRep(!autoRep) }>{autoRep?"ON":"OFF"}</button>
-           
+
         
+          <ReactAudioPlayer
+            src="../audio/fly.mp3"
+            className='audio'
+            autoPlay
+            controls
+            loop
+            ref={audioRef}
+          />
     </div>
   );
 }

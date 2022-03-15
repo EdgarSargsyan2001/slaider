@@ -54,7 +54,7 @@
     transform: rotate3d(60, 4, 1, -34deg);
     width: inherit;
     height: inherit;
-    box-shadow:0 -29px 45px 5px rgba(255, 255, 255,0.43);
+    box-shadow:0px -17px 33px -5px rgb(255 255 255 / 30%);
 }
 .next,.prev{
     width: 40px;
@@ -99,5 +99,17 @@
     .next,.prev{
         width: 30px;
         height: 60vh;
+    }
+    
+    audio::-webkit-media-controls-panel {
+        background: url("https://freerangestock.com/sample/140290/romantic-couple-watching-the-stars--love-on-the-milky-way.jpg");
+        background-position: center;
+        
+    }
+    .audio{
+        /* display: none; */
+        height: 25px;
+        position: absolute;
+        bottom: 25px;
     }
 }
