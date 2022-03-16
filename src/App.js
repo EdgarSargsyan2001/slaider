@@ -101,6 +101,15 @@ useEffect(()=>{
 })
 
 useEffect(()=>{
+  window.addEventListener('click',()=>{
+    audioRef.current.play()
+  })
+  return () => window.removeEventListener('click',()=>{
+    audioRef.current.play()
+  })
+})
+
+useEffect(()=>{
 
   audioRef.current.style.display=`${autoRep?"block":"none"}`
   if(autoRep){
