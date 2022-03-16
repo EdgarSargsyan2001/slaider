@@ -107,7 +107,7 @@ useEffect(()=>{
   return () => window.removeEventListener('click',()=>{
     audioRef.current.play()
   })
-})
+},[audioRef])
 
 useEffect(()=>{
 
