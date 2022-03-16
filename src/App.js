@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 import './App.css';
 
 
@@ -38,8 +37,8 @@ function App() {
 
   function nextClick(){
     
-    // console.log(audioRef.current.audioEl.current.style.display="none")
-
+    // console.log(audioRef.current.style.display="none")
+    audioRef.current.play()
     if(activeItemPosition < items.length - 1 ){
       setActiveItemPosition((prev)=>prev + 1)
       setShowButtonPrev(true)
@@ -52,7 +51,8 @@ function App() {
 }
 
 function prevClick(){
-  // console.log(audioRef.current.audioEl.current.style.display="inline")
+  
+  // console.log(audioRef.current.style.display="inline")
   if(activeItemPosition > 0 ){
     setActiveItemPosition((prev)=>prev - 1)
     setShowButtonNext(true)
@@ -101,8 +101,6 @@ useEffect(()=>{
 
 })
 
-
-
   return (
     <div className="App">
         
@@ -147,22 +145,21 @@ useEffect(()=>{
           showButtonNext && <button className='next' onClick={nextClick} >{'>'}</button>
         }
 
-
-
       </div>
 
       <button className='ButtonONOFF' onClick={ () => setAutoRep(!autoRep) }>{autoRep?"ON":"OFF"}</button>
 
-      <ReactAudioPlayer
-        src="../audio/fly.mp3"
-        className='audio'
-        autoPlay={true}
-        controls={true}
-        loop={true}
-        ref={audioRef}
-      />
 
-
+        <audio 
+          src='../audio/fly.mp3'  
+          className='audio'
+          ref={audioRef} 
+          controls 
+          autoPlay
+          loop
+  
+        />
+          
     </div>
   );
 }
