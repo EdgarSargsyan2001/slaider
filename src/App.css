@@ -23,9 +23,8 @@
     height: 584px;
     display: flex;
     justify-content: center;
-    background: url("https://freerangestock.com/sample/140290/romantic-couple-watching-the-stars--love-on-the-milky-way.jpg");
+    background: url("https://data.whicdn.com/images/265060879/original.gif");
     background-size: cover;
-    background-position: center;
     position: absolute;
     top:0;
     left: 0;
@@ -36,13 +35,12 @@
     height: 500px;
     padding: 25px 28px;
     transition: 0.8s;
-    background: url("https://data.whicdn.com/images/265060879/original.gif");
+    background: url("https://freerangestock.com/sample/140290/romantic-couple-watching-the-stars--love-on-the-milky-way.jpg");
+    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    box-shadow:16px -12px 21px 5px rgb(0 0 0 / 19%) ; 
-    /* transform: matrix3d(1, 0, -0.5, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); */
+    box-shadow:0px 0px 57px 17px rgb(0 0 0 / 48%) ; 
     
 }
 .ul{
@@ -93,7 +91,6 @@
 
 @media screen and (max-width:500px) {
     .App{
-        /* background-size: contain; */
         background-position-x:center;
     }
     .ButtonONOFF{
@@ -107,7 +104,6 @@
     .screen{
         width:272px;
         height: 400px;
-        /* height: 200px; */
     }
     .ul{
         perspective: 775px;
@@ -129,7 +125,6 @@
         
     }
     .audio{
-        /* display: none; */
         height: 25px;
         position: absolute;
         bottom: 25px;
