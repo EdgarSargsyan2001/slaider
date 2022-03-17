@@ -7,7 +7,7 @@ export default function Audio({audioRef,autoRep}){
         audioRef.current.style.display=`${autoRep?"block":"none"}`
         autoRep ? audioRef.current.play() : audioRef.current.pause()
         
-    },[autoRep])
+    },[autoRep,audioRef])
 
     return(
         <audio 

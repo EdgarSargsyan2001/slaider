@@ -2,7 +2,7 @@ import {useRef, useState, Suspense,lazy } from 'react';
 import Screen from './components/Screen';
 import './App.css';
 const ButtonOnOff = lazy(() => import('./components/ButtonOnOff'));
-const Audio = lazy(() => import('./Audio'));
+const Audio = lazy(() => import('./components/Audio'));
 
 
 function App() {
