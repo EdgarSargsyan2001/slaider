@@ -100,12 +100,6 @@ useEffect(()=>{
 
 })
 
-useEffect(()=>{
-  window.addEventListener('click',()=>{
-    audioRef.current.play()
-  })
-
-},[])
 
 useEffect(()=>{
 
@@ -155,6 +149,7 @@ useEffect(()=>{
                 setAutoRep(!autoRep)
                 setflag(true)
                 firstDiv.current.style.opacity="0"
+                audioRef.current.play()
   
             }}>{AiFillPlayCircle({size:300,color:"rgba(28,47,106, 0.619)"})}</button>
             
